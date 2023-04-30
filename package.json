@@ -36,13 +36,13 @@
   "main": ".eslintrc.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Max-Loktionov/nodejs-homework-rest-api.git"
+    "url": "git+https://github.com/Max-Loktionov/movie-storage.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Max-Loktionov/nodejs-homework-rest-api/issues"
+    "url": "https://github.com/Max-Loktionov/movie-storage/issues"
   },
-  "homepage": "https://github.com/Max-Loktionov/nodejs-homework-rest-api#readme"
+  "homepage": "https://github.com/Max-Loktionov/movie-storage#readme"
 }

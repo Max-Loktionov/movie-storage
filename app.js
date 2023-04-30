@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-app.use("/api/users", usersRouter); // 'api/auth'
+app.use("/api/users", usersRouter);
 app.use("/api/movies", moviesRouter);
 
 app.use((req, res) => {

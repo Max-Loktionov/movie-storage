@@ -114,3 +114,19 @@ some action with data:
   and we need to transfer in {req.query}
 - search by the fields: [title,director,releaseDate]. For Example (GET /api/movies?title=The Godfather ==>
   data:{ movies:[{"title": "The Godfather","director": "Francis Ford Coppola","releaseDate": "01-01-1972",}]} )
+
+---
+
+this user has some movies in the collection
+
+{
+"email":"gallo@mal.com",
+"password":"123456Ab"
+}
+
+like this object for create
+{
+"title":"Fight Club",
+"director":"David Fincher",
+"releaseDate": "01-02-1999"
+}
