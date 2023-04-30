@@ -1,8 +1,4 @@
-## GoIT Node.js Course Homework
-
-This is an educational project from the course Node.js for GoIT-school.
-
-A web-app is created with Node.js application using MVC. The next modules are created:
+## Node.js
 
 **Server** : contains main app file with base configurations - contains configuration of PORT and connection to DB;
 
@@ -57,23 +53,21 @@ npm lint:fix
 
 - get/api/movies
 - get/api/movies/movieId
-- put/api/movies/movieId/favorite
 
 some action with data:
 
-| action             | method mongoose  | route                              |     |
-| ------------------ | :--------------: | ---------------------------------- | --: |
-| getAll             |       find       | /api/movies                        |  00 |
-| geMovietById       |     findOne      | /api/movies/movieId                |  01 |
-| addMovie           |      create      | /api/movies                        |  02 |
-| updateMovieById    | findOneAndUpdate | /api/movies/movieId                |  03 |
-| updateFavoriteById | findOneAndUpdate | patch//api/movies/movieId/favorite |  04 |
-| deleteMovieById    | findOneAndDelete | delete//api/movies/movieId         |  05 |
-|                    |                  |                                    |     |
-| register           |      create      | post/api/users/register            |  06 |
-| login              | findOneAndUpdate | post/api/users/login               |  07 |
-| logout             | findOneAndUpdate | post/api/users/logout              |     |
-| current            |       find       | get/api/users/current              |     |
+| action          | method mongoose  | route                      |     |
+| --------------- | :--------------: | -------------------------- | --: |
+| getAll          |       find       | /api/movies                |  00 |
+| getMovietById   |     findOne      | /api/movies/movieId        |  01 |
+| addMovie        |      create      | /api/movies                |  02 |
+| updateMovieById | findOneAndUpdate | /api/movies/movieId        |  03 |
+| deleteMovieById | findOneAndDelete | delete//api/movies/movieId |  04 |
+|                 |                  |                            |     |
+| register        |      create      | post/api/users/register    |  05 |
+| login           | findOneAndUpdate | post/api/users/login       |  06 |
+| logout          | findOneAndUpdate | post/api/users/logout      |  07 |
+| current         |       find       | get/api/users/current      |  08 |
 
 **Use api on routes: /api/users **
 
