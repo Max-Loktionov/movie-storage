@@ -51,23 +51,26 @@ npm lint:fix
 
 **Use api on routes: /api/movies**
 
-- get/api/movies
-- get/api/movies/movieId
+- get /api/movies
+- get /api/movies/movieId
+- post /api/movies
+- put /api/movies/movieId
+- delete /api/movies/movieId
 
 some action with data:
 
 | action          | method mongoose  | route                      |     |
 | --------------- | :--------------: | -------------------------- | --: |
-| getAll          |       find       | /api/movies                |  00 |
-| getMovietById   |     findOne      | /api/movies/movieId        |  01 |
-| addMovie        |      create      | /api/movies                |  02 |
-| updateMovieById | findOneAndUpdate | /api/movies/movieId        |  03 |
+| getAll          |       find       | get//api/movies            |  00 |
+| getMovietById   |     findOne      | get/api/movies/movieId     |  01 |
+| addMovie        |      create      | post//api/movies           |  02 |
+| updateMovieById | findOneAndUpdate | put//api/movies/movieId    |  03 |
 | deleteMovieById | findOneAndDelete | delete//api/movies/movieId |  04 |
 |                 |                  |                            |     |
-| register        |      create      | post/api/users/register    |  05 |
-| login           | findOneAndUpdate | post/api/users/login       |  06 |
-| logout          | findOneAndUpdate | post/api/users/logout      |  07 |
-| current         |       find       | get/api/users/current      |  08 |
+| register        |      create      | post//api/users/register   |  05 |
+| login           | findOneAndUpdate | post//api/users/login      |  06 |
+| logout          | findOneAndUpdate | post//api/users/logout     |  07 |
+| current         |       find       | get//api/users/current     |  08 |
 
 **Use api on routes: /api/users **
 
@@ -76,14 +79,16 @@ some action with data:
 - post/api/users/logout
 - get/api/users/current
 
-| route | response | action |
-| ----- | -------- | ------ |
-
-| get/api/users/current | status:200; body={"status":"success","code":"200","data":{"email":"max2@company.com","userName":"student"}} | get current user |
-| post/api/users/logout | status:204; empty body | remove the authorization |
-| post/api/users/register | status:201; body = {"status":"success","code":201,"user":{"email":"max7@company.com","userName":"student"}} | create a new user |
-| post/api/users/login | {"status":"success","code":200,"response":{"token":"x...x","user":{"email":"user@user.com","userName":"student"}}} | send the token for valid user; the token is valid for one day |
+| route                   | response                                                                                                           | action                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| get/api/users/current   | status:200; body={"status":"success","code":"200","data":{"email":"max2@company.com","userName":"student"}}        | get current user                                              |
+| post/api/users/logout   | status:204; empty body                                                                                             | remove the authorization                                      |
+| post/api/users/register | status:201; body = {"status":"success","code":201,"user":{"email":"max7@company.com","userName":"student"}}        | create a new user                                             |
+| post/api/users/login    | {"status":"success","code":200,"response":{"token":"x...x","user":{"email":"user@user.com","userName":"student"}}} | send the token for valid user; the token is valid for one day |
 
 ---
 
 - pagination, you have to add two parameters (page=2&limit=2) page=Number (number of page wich could be choosen with amount=limit movies on each pages), limit=Number [by default (GET /movies?page=1&limit=20)]
+  and we need to transfer in {req.query}
+- search by the fields: [title,director,releaseDate]. For Example (GET /api/movies?title=The Godfather ==>
+  data:{ movies:[{"title": "The Godfather","director": "Francis Ford Coppola","releaseDate": "01-01-1972",}]} )
