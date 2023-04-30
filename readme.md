@@ -2,6 +2,8 @@
 
 app allows you to create user and [create, read, update, delete] entries to the movie collection at the DB Mongo.
 
+Deploy: https://movie-storage.onrender.com
+
 **Server** : contains main app file with base configurations - contains configuration of PORT and connection to DB;
 
 **Models**: contains models of DB entities in MongoDB - contact, includes movieschema and joiSchema (validation schemes for validate the data from front);
@@ -9,6 +11,22 @@ app allows you to create user and [create, read, update, delete] entries to the 
 **Controllers**: functions of interaction with the DB entities (CRUD);
 
 **Routes**: build REST API architecture using CRUD-methods;
+
+## Installation
+
+Make sure you have an LTS version of Node.js installed on your computer. Download and install if it is necessary.
+
+Clone this repo.
+
+```
+git clone https://github.com/Max-Loktionov/movie-storage.git
+```
+
+Install the basic project dependencies with the command
+
+```
+npm install
+```
 
 ### Commands:
 
@@ -24,7 +42,7 @@ npm start
 npm run dev
 ```
 
-- start the server in mode development;
+- start the server in mode development => Server running. API port: 3000. Database connection successful
 
 ```bash
 npm run lint
@@ -50,6 +68,8 @@ npm lint:fix
 ### API:
 
 ---
+
+https://movie-storage.onrender.com
 
 **Use api on routes: /api/movies**
 
