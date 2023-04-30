@@ -1,4 +1,6 @@
-## Node.js
+## movie-storage
+
+app allows you to create user and [create, read, update, delete] entries to the movie collection at the DB Mongo.
 
 **Server** : contains main app file with base configurations - contains configuration of PORT and connection to DB;
 
