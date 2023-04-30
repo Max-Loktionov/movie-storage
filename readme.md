@@ -6,7 +6,7 @@ A web-app is created with Node.js application using MVC. The next modules are cr
 
 **Server** : contains main app file with base configurations - contains configuration of PORT and connection to DB;
 
-**Models**: contains models of DB entities in MongoDB - contact, includes contactSchema and joiSchema (validation schemes for validate the data from front);
+**Models**: contains models of DB entities in MongoDB - contact, includes movieschema and joiSchema (validation schemes for validate the data from front);
 
 **Controllers**: functions of interaction with the DB entities (CRUD);
 
@@ -53,27 +53,27 @@ npm lint:fix
 
 ---
 
-**Use api on routes: /api/contacts**
+**Use api on routes: /api/movies**
 
-- get/api/contacts
-- get/api/contacts/contactId
-- put/api/contacts/contactId/favorite
+- get/api/movies
+- get/api/movies/movieId
+- put/api/movies/movieId/favorite
 
 some action with data:
 
-| action             | method mongoose  | route                                 |     |
-| ------------------ | :--------------: | ------------------------------------- | --: |
-| getAll             |       find       | /api/contacts                         |  00 |
-| getById            |     findOne      | /api/contacts/contactId               |  01 |
-| add                |      create      | /api/contacts                         |  02 |
-| updateById         | findOneAndUpdate | /api/contacts/contactId               |  03 |
-| updateFavoriteById | findOneAndUpdate | patch/api/contacts/contactId/favorite |  04 |
-| removeById         |  findOneDelete   | delete/api/contacts/contactId         |  05 |
-|                    |                  |                                       |     |
-| register           |      create      | post/api/users/register               |  06 |
-| login              | findOneAndUpdate | post/api/users/login                  |  07 |
-| logout             | findOneAndUpdate | post/api/users/logout                 |     |
-| current            |       find       | get/api/users/current                 |     |
+| action             | method mongoose  | route                              |     |
+| ------------------ | :--------------: | ---------------------------------- | --: |
+| getAll             |       find       | /api/movies                        |  00 |
+| geMovietById       |     findOne      | /api/movies/movieId                |  01 |
+| addMovie           |      create      | /api/movies                        |  02 |
+| updateMovieById    | findOneAndUpdate | /api/movies/movieId                |  03 |
+| updateFavoriteById | findOneAndUpdate | patch//api/movies/movieId/favorite |  04 |
+| deleteMovieById    | findOneAndDelete | delete//api/movies/movieId         |  05 |
+|                    |                  |                                    |     |
+| register           |      create      | post/api/users/register            |  06 |
+| login              | findOneAndUpdate | post/api/users/login               |  07 |
+| logout             | findOneAndUpdate | post/api/users/logout              |     |
+| current            |       find       | get/api/users/current              |     |
 
 **Use api on routes: /api/users **
 
@@ -89,3 +89,7 @@ some action with data:
 | post/api/users/logout | status:204; empty body | remove the authorization |
 | post/api/users/register | status:201; body = {"status":"success","code":201,"user":{"email":"max7@company.com","userName":"student"}} | create a new user |
 | post/api/users/login | {"status":"success","code":200,"response":{"token":"x...x","user":{"email":"user@user.com","userName":"student"}}} | send the token for valid user; the token is valid for one day |
+
+---
+
+- pagination, you have to add two parameters (page=2&limit=2) page=Number (number of page wich could be choosen with amount=limit movies on each pages), limit=Number [by default (GET /movies?page=1&limit=20)]

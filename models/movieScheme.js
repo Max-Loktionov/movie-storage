@@ -31,21 +31,13 @@ const joiSchema = Joi.object({
   title: Joi.string().trim().min(4).max(40).required(),
   director: Joi.string().min(3).max(25),
   releaseDate: Joi.date().less("now"),
-  //   favorite: Joi.bool(),
 });
 
 movieSchema.post("save", handleError);
-
-const favoriteJoiSchema = Joi.object({
-  favorite: Joi.bool().required().messages({
-    "any.required": `missing field favorite`,
-  }),
-});
 
 const Movie = model("movie", movieSchema);
 
 module.exports = {
   Movie,
   joiSchema,
-  // favoriteJoiSchema,
 };

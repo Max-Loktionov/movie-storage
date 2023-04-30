@@ -1,22 +1,20 @@
 const express = require("express");
 
 const { movieControllers: ctrl } = require("../../controllers");
-const { joiSchema, favoriteJoiSchema } = require("../../models/movieScheme");
+const { joiSchema } = require("../../models/movieScheme");
 const { auth, validation, isValidId } = require("../../middlewares");
 const { ctrlWrapper } = require("../../helpers");
 
 const router = express.Router();
 
-// router.get("/", auth, ctrlWrapper(ctrl.getAll));
+router.get("/", auth, ctrlWrapper(ctrl.getAllMoviesByUserContr));
 
-// router.get("/:id", auth, isValidId, ctrlWrapper(ctrl.getById));
+router.get("/:id", auth, isValidId, ctrlWrapper(ctrl.geMovietByIdContr));
 
 router.post("/", auth, validation(joiSchema), ctrlWrapper(ctrl.addMovieContr));
 
-// router.put("/:id", auth, isValidId, validation(joiSchema), ctrlWrapper(ctrl.updateById));
+router.delete("/:id", auth, isValidId, ctrlWrapper(ctrl.deleteMovieByIdContr));
 
-// router.patch("/:id/favorite", auth, isValidId, validation(favoriteJoiSchema), ctrlWrapper(ctrl.updateFavoriteById));
-
-// router.delete("/:id", auth, isValidId, ctrlWrapper(ctrl.removeById));
+router.put("/:id", auth, isValidId, validation(joiSchema), ctrlWrapper(ctrl.updateMovieByIdContr));
 
 module.exports = router;

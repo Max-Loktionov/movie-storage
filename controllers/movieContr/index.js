@@ -1,15 +1,13 @@
-// const getAll = require("./getAll");
-// const getById = require("./getById");
+const getAllMoviesByUserContr = require("./getAllMoviesByUserContr");
+const geMovietByIdContr = require("./getMovieByIdContr");
 const addMovieContr = require("./addMovieContr");
-// const updateById = require("./updateById");
-// const updateFavoriteById = require("./updateFavoriteById");
-// const removeById = require("./removeById");
+const updateMovieByIdContr = require("./updateMovieByIdContr");
+const deleteMovieByIdContr = require("./deleteMovieByIdContr");
 
 module.exports = {
-  //   getAll,
-  //   getById,
+  getAllMoviesByUserContr,
+  geMovietByIdContr,
   addMovieContr,
-  //   updateById,
-  //   updateFavoriteById,
-  //   removeById,
+  updateMovieByIdContr,
+  deleteMovieByIdContr,
 };
