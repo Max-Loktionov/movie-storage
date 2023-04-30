@@ -4,9 +4,9 @@ const jwt = require("jsonwebtoken");
 const { User } = require("../../models");
 const { RequestError } = require("../../helpers");
 
-const { SECRET_KEY } = process.env;
+const { SECRET_KEY_JWT } = process.env;
 
-const login = async (req, res, next) => {
+const loginUserContr = async (req, res, next) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
@@ -21,7 +21,7 @@ const login = async (req, res, next) => {
   const payload = {
     id: user._id,
   };
-  const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "1d" });
+  const token = jwt.sign(payload, SECRET_KEY_JWT, { expiresIn: "1d" });
   await User.findByIdAndUpdate(user._id, { token });
 
   res.json({
@@ -36,4 +36,4 @@ const login = async (req, res, next) => {
   });
 };
 
-module.exports = login;
+module.exports = loginUserContr;

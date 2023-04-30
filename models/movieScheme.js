@@ -29,7 +29,7 @@ const movieSchema = Schema(
 
 const joiSchema = Joi.object({
   title: Joi.string().trim().min(4).max(40).required(),
-  director: Joi.string().min(3).max(25),
+  director: Joi.string().min(3).max(50),
   releaseDate: Joi.date().less("now"),
 });
 

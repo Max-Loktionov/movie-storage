@@ -44,8 +44,8 @@ npm lint:fix
 
 ---
 
-| bcryptjs | cors | cross-env | dotenv | express | gravatar | jimp | joi | jsonwebtoken | mongoose | morgan | multer |
-| -------- | ---- | --------- | ------ | ------- | -------- | ---- | --- | ------------ | -------- | ------ | ------ |
+| bcryptjs | cors | cross-env | dotenv | express | joi | jsonwebtoken | mongoose | morgan |
+| -------- | ---- | --------- | ------ | ------- | --- | ------------ | -------- | ------ |
 
 ---
 

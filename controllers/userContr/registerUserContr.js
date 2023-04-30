@@ -1,10 +1,9 @@
 const bcrypt = require("bcryptjs");
-// const gravatar = require("gravatar");
 
 const { User } = require("../../models");
 const { RequestError } = require("../../helpers");
 
-const register = async (req, res, next) => {
+const registerUserContr = async (req, res, next) => {
   const { email, password, userName } = req.body;
   const user = await User.findOne({ email }, { s: "250" });
   if (user) {
@@ -28,4 +27,4 @@ const register = async (req, res, next) => {
   });
 };
 
-module.exports = register;
+module.exports = registerUserContr;

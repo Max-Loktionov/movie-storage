@@ -1,7 +1,7 @@
-const users = require("./users");
+const userControllers = require("./userContr");
 const movieControllers = require("./movieContr");
 
 module.exports = {
   movieControllers,
-  users,
+  userControllers,
 };

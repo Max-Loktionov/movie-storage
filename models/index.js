@@ -1,4 +1,4 @@
-const { User } = require("./user");
+const { User } = require("./userSceme");
 const { Movie } = require("./movieScheme");
 
 module.exports = {

@@ -1,4 +1,4 @@
-const getCurrent = async (req, res, next) => {
+const getUserCurrentContr = async (req, res, next) => {
   const { email, userName } = req.user;
   res.json({
     status: "success",
@@ -12,4 +12,4 @@ const getCurrent = async (req, res, next) => {
   });
 };
 
-module.exports = getCurrent;
+module.exports = getUserCurrentContr;
