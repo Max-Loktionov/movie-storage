@@ -9,7 +9,7 @@ const getAllMoviesByUserContr = async (req, res) => {
     skip,
     limit: limit,
   })
-    .sort({ name: 1 })
+    .sort({ title: 1 })
     .populate("owner", "_id email subscription createdAt");
 
   res.json({

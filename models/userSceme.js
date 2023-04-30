@@ -10,7 +10,7 @@ const passwordMessage =
 
 const userSchema = Schema(
   {
-    userName: {
+    username: {
       type: String,
       default: "NewUser",
     },
@@ -25,11 +25,6 @@ const userSchema = Schema(
       required: [true, "Email is required"],
       unique: true,
     },
-    // collection: {
-    //   type: String,
-    //   // type: [{ type: Schema.Types.ObjectId }],
-    //   default: null,
-    // },
 
     token: { type: String, default: null },
   },
@@ -39,7 +34,7 @@ const userSchema = Schema(
 userSchema.post("save", handleError);
 
 const joiRegisterSchema = Joi.object({
-  userName: Joi.string().empty(""),
+  username: Joi.string().empty(""),
   password: Joi.string()
     .trim()
     .regex(passwordRegex)
